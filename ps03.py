@@ -1,8 +1,10 @@
+=== Student Information Input ===
 name = input("Enter the Student's name: ")
 marks = int(input("Enter the Marks (0-100): "))
 attendance = int(input("Enter the Attendance percentage (0-100): "))
 
-# Determine grade using if-elif-else
+=== Grade Determination ===
+#This section is already using if-elif-else, no changes needed.
 if marks >= 90:
     grade = 'A'
 elif marks >= 80:
@@ -14,32 +16,31 @@ elif marks >= 60:
 else:
     grade = 'F'
 
-# Check bonus eligibility using if-else
-if attendance >= 75:
-    bonus = True
-else:
-    bonus = False
 
-# Use a ternary operator to determine student status
+=== Bonus Eligibility and Student Status ===
+# Bonus eligibility using ternary operator (no change needed)
+bonus = "Yes" if attendance >= 75 else "No"
+
+# Student Status using ternary operator (no change needed)
 status = "Pass" if marks >= 60 else "Fail"
 
-# Output the result
+
+=== Result Output ===
 print("\nStudent Report")
 print(f"Name: {name}")
 print(f"Grade: {grade}")
 print(f"Attendance: {attendance}%")
-print(f"Bonus Eligibility: {'Yes' if bonus else 'No'}")
+print(f"Bonus Eligibility: {bonus}")
 print(f"Status: {status}")
 
-# Bonus message using case (match-case in Python 3.10+)
-match grade:
-    case 'A':
-        print("Excellent work! Keep it up!")
-    case 'B':
-        print("Great job! Aim for an A next time!")
-    case 'C':
-        print("Good effort! Try to improve further.")
-    case 'D':
-        print("You passed, but there's room for improvement.")
-    case 'F':
-        print("Unfortunately, you failed. Work harder next time.")
+=== Bonus Message (if-elif-else) ===
+if grade == 'A':
+    print("Excellent work! Keep it up!")
+elif grade == 'B':
+    print("Great job! Aim for an A next time!")
+elif grade == 'C':
+    print("Good effort! Try to improve further.")
+elif grade == 'D':
+    print("You passed, but there's room for improvement.")
+else:  # grade == 'F'
+    print("Unfortunately, you failed. Work harder next time.")
